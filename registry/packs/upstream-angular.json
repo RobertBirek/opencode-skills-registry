@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "source": "francostino-opencode-skills-collection",
+  "skills": [
+    "angular",
+    "angular-best-practices",
+    "angular-state-management",
+    "angular-ui-patterns",
+    "angular-migration"
+  ]
+}

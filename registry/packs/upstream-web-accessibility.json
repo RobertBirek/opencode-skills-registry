@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "source": "francostino-opencode-skills-collection",
+  "skills": [
+    "accesslint-audit",
+    "accesslint-scan",
+    "accesslint-diff",
+    "accessibility-compliance-accessibility-audit"
+  ]
+}

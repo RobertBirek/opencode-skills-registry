@@ -1,0 +1,143 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "match": [
+        "package.json#dependencies.react",
+        "package.json#devDependencies.react",
+        "package.json#dependencies.next",
+        "package.json#devDependencies.next",
+        "next.config.*"
+      ],
+      "add": [
+        "vercel-react-best-practices",
+        "frontend-design"
+      ],
+      "reason": "React or Next.js stack detected"
+    },
+    {
+      "match": [
+        "angular.json",
+        "package.json#dependencies.@angular/core",
+        "package.json#devDependencies.@angular/cli"
+      ],
+      "add": [
+        "angular",
+        "angular-best-practices",
+        "angular-state-management",
+        "angular-ui-patterns"
+      ],
+      "reason": "Angular stack detected"
+    },
+    {
+      "match": [
+        "playwright.config.*",
+        "cypress.config.*",
+        "tests/e2e/**",
+        "e2e/**"
+      ],
+      "add": [
+        "webapp-testing"
+      ],
+      "reason": "Browser testing likely useful"
+    },
+    {
+      "match": [
+        "accessibility/**",
+        "a11y/**",
+        "playwright.config.*",
+        "src/**/*.tsx",
+        "src/**/*.jsx"
+      ],
+      "add": [
+        "accesslint-scan",
+        "accesslint-audit"
+      ],
+      "reason": "Frontend accessibility audit may be useful"
+    },
+    {
+      "match": [
+        "mcp.json",
+        "mcp/**",
+        "server/**",
+        "src/mcp/**"
+      ],
+      "add": [
+        "mcp-builder"
+      ],
+      "reason": "MCP or server integration work detected"
+    },
+    {
+      "match": [
+        "AGENTS.md",
+        "CLAUDE.md",
+        ".opencode/agents/**",
+        ".opencode/commands/**"
+      ],
+      "add": [
+        "agents-md",
+        "anti-sycophancy"
+      ],
+      "reason": "Agent instructions or opencode workflow files detected"
+    },
+    {
+      "match": [
+        "package.json#dependencies.langchain",
+        "package.json#dependencies.openai",
+        "package.json#dependencies.@anthropic-ai/sdk",
+        "agents/**",
+        "src/agents/**"
+      ],
+      "add": [
+        "agent-tool-builder",
+        "ai-engineer",
+        "agent-evaluation"
+      ],
+      "reason": "AI agent or LLM application work detected"
+    },
+    {
+      "match": [
+        ".github/workflows/**"
+      ],
+      "add": [
+        "agentic-actions-auditor"
+      ],
+      "reason": "GitHub Actions workflows detected"
+    },
+    {
+      "match": [
+        "README.md",
+        "docs/**",
+        "changelog/**",
+        "releases/**"
+      ],
+      "add": [
+        "stop-slop"
+      ],
+      "reason": "Docs or prose cleanup likely helpful"
+    },
+    {
+      "match": [
+        "composio.*",
+        "integrations/**",
+        "workflows/**",
+        "automation/**"
+      ],
+      "add": [
+        "composio"
+      ],
+      "reason": "External app automation or integrations detected"
+    },
+    {
+      "match": [
+        "SKILL.md",
+        ".opencode/skills/**",
+        "skillset.json"
+      ],
+      "add": [
+        "skill-creator"
+      ],
+      "reason": "Skill authoring or maintenance detected"
+    }
+  ]
+}

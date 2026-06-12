@@ -1,0 +1,193 @@
+{
+  "version": 1,
+  "sourceRoots": [
+    "/root/.agents/skills",
+    "/root/.claude/skills"
+  ],
+  "upstreams": {
+    "francostino-opencode-skills-collection": {
+      "type": "local-vault",
+      "repository": "https://github.com/FrancoStino/opencode-skills-collection.git",
+      "indexPath": "/root/.config/opencode/skills-registry/upstreams/francostino/repo/skills_index.json",
+      "skillsRoot": "/root/.config/opencode/skills-registry/upstreams/francostino/repo",
+      "pathRewrite": {
+        "from": "skills/",
+        "to": "bundled-skills/"
+      },
+      "allowedRiskLevels": ["safe", "none", "unknown"],
+      "blockedRiskLevels": ["critical", "offensive"],
+      "summary": "Upstream SkillPointer collection with 1000+ skills; materialize selected skills only"
+    }
+  },
+  "skills": {
+    "webapp-testing": {
+      "sourceType": "local",
+      "sourceRoot": "/root/.agents/skills",
+      "path": "webapp-testing",
+      "scope": "project",
+      "materialize": true,
+      "priority": 95,
+      "tags": ["playwright", "browser-testing", "ui", "e2e"],
+      "summary": "Test local web apps with Playwright and server helpers"
+    },
+    "frontend-design": {
+      "sourceType": "local",
+      "sourceRoot": "/root/.agents/skills",
+      "path": "frontend-design",
+      "scope": "project",
+      "materialize": true,
+      "priority": 90,
+      "tags": ["ui", "design", "react", "visual"],
+      "summary": "Produce distinctive, intentional frontend designs"
+    },
+    "vercel-react-best-practices": {
+      "sourceType": "local",
+      "sourceRoot": "/root/.agents/skills",
+      "path": "vercel-react-best-practices",
+      "scope": "project",
+      "materialize": true,
+      "priority": 85,
+      "tags": ["react", "nextjs", "performance", "review"],
+      "summary": "Optimize React and Next.js performance"
+    },
+    "mcp-builder": {
+      "sourceType": "local",
+      "sourceRoot": "/root/.agents/skills",
+      "path": "mcp-builder",
+      "scope": "project",
+      "materialize": true,
+      "priority": 80,
+      "tags": ["mcp", "protocol", "sdk", "server"],
+      "summary": "Build MCP servers with protocol and eval guidance"
+    },
+    "skill-creator": {
+      "sourceType": "local",
+      "sourceRoot": "/root/.agents/skills",
+      "path": "skill-creator",
+      "scope": "project",
+      "materialize": true,
+      "priority": 75,
+      "tags": ["skills", "authoring", "evals", "benchmark"],
+      "summary": "Create, test, and improve SKILL.md files"
+    },
+    "stop-slop": {
+      "sourceType": "local",
+      "sourceRoot": "/root/.agents/skills",
+      "path": "stop-slop",
+      "scope": "project",
+      "materialize": true,
+      "priority": 70,
+      "tags": ["writing", "docs", "prose", "cleanup"],
+      "summary": "Remove AI-writing tells from prose"
+    },
+    "composio": {
+      "sourceType": "local",
+      "sourceRoot": "/root/.agents/skills",
+      "path": "composio",
+      "scope": "project",
+      "materialize": true,
+      "priority": 75,
+      "tags": ["automation", "mcp", "cli", "integrations"],
+      "summary": "Use external apps through Composio"
+    },
+    "brainstorming": {
+      "sourceType": "builtin",
+      "scope": "global",
+      "materialize": false,
+      "priority": 100,
+      "tags": ["planning", "design", "requirements"],
+      "summary": "Shape ideas into a design before implementation"
+    },
+    "systematic-debugging": {
+      "sourceType": "builtin",
+      "scope": "global",
+      "materialize": false,
+      "priority": 100,
+      "tags": ["debugging", "bugs", "investigation"],
+      "summary": "Debug issues with a structured workflow"
+    },
+    "verification-before-completion": {
+      "sourceType": "builtin",
+      "scope": "global",
+      "materialize": false,
+      "priority": 100,
+      "tags": ["verification", "tests", "release"],
+      "summary": "Verify work before claiming it is complete"
+    },
+    "writing-plans": {
+      "sourceType": "builtin",
+      "scope": "global",
+      "materialize": false,
+      "priority": 100,
+      "tags": ["planning", "multi-step", "spec"],
+      "summary": "Turn a spec into an implementation plan"
+    }
+  },
+  "bootstrap": {
+    "global": [
+      "brainstorming",
+      "systematic-debugging",
+      "verification-before-completion",
+      "writing-plans"
+    ],
+    "project": [
+      "webapp-testing",
+      "frontend-design",
+      "vercel-react-best-practices",
+      "mcp-builder",
+      "skill-creator",
+      "stop-slop",
+      "composio"
+    ]
+  },
+  "packs": {
+    "webapp": [
+      "frontend-design",
+      "vercel-react-best-practices",
+      "webapp-testing"
+    ],
+    "integration": [
+      "mcp-builder",
+      "composio"
+    ],
+    "writing": [
+      "stop-slop"
+    ],
+    "skill-workbench": [
+      "skill-creator"
+    ],
+    "upstream-opencode-core": [
+      "agents-md",
+      "anti-sycophancy",
+      "ai-native-cli",
+      "address-github-comments",
+      "acceptance-orchestrator",
+      "advanced-evaluation",
+      "agent-evaluation",
+      "agenttrace-session-audit"
+    ],
+    "upstream-web-accessibility": [
+      "accesslint-audit",
+      "accesslint-scan",
+      "accesslint-diff",
+      "accessibility-compliance-accessibility-audit"
+    ],
+    "upstream-angular": [
+      "angular",
+      "angular-best-practices",
+      "angular-state-management",
+      "angular-ui-patterns",
+      "angular-migration"
+    ],
+    "upstream-ai-agent": [
+      "agent-tool-builder",
+      "agent-memory-systems",
+      "ai-agent-development",
+      "ai-agents-architect",
+      "ai-engineer",
+      "ai-ml",
+      "ai-product",
+      "ai-wrapper-product"
+    ]
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "source": "francostino-opencode-skills-collection",
+  "skills": [
+    "agents-md",
+    "anti-sycophancy",
+    "ai-native-cli",
+    "address-github-comments",
+    "acceptance-orchestrator",
+    "advanced-evaluation",
+    "agent-evaluation",
+    "agenttrace-session-audit"
+  ]
+}
