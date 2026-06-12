@@ -2,7 +2,8 @@
   "version": 1,
   "sourceRoots": [
     "/root/.agents/skills",
-    "/root/.claude/skills"
+    "/root/.claude/skills",
+    "~/.config/opencode/skills"
   ],
   "upstreams": {
     "francostino-opencode-skills-collection": {
@@ -79,6 +80,26 @@
       "priority": 70,
       "tags": ["writing", "docs", "prose", "cleanup"],
       "summary": "Remove AI-writing tells from prose"
+    },
+    "cloudflare": {
+      "sourceType": "local",
+      "sourceRoot": "~/.config/opencode/skills",
+      "path": "cloudflare",
+      "scope": "project",
+      "materialize": true,
+      "priority": 70,
+      "tags": ["cloudflare", "workers", "d1", "r2", "edge", "serverless", "pages"],
+      "summary": "Comprehensive Cloudflare platform skill covering Workers, Pages, storage, AI, networking, security, and IaC"
+    },
+    "vault-daydream": {
+      "sourceType": "local",
+      "sourceRoot": "~/.config/opencode/skills",
+      "path": "vault-daydream",
+      "scope": "project",
+      "materialize": true,
+      "priority": 50,
+      "tags": ["obsidian", "vault", "daydream", "notes", "connections"],
+      "summary": "Multi-agent system that mines an Obsidian vault for non-obvious connections between notes"
     },
     "composio": {
       "sourceType": "local",
@@ -178,6 +199,9 @@
       "angular-state-management",
       "angular-ui-patterns",
       "angular-migration"
+    ],
+    "cloudflare": [
+      "cloudflare"
     ],
     "upstream-ai-agent": [
       "agent-tool-builder",

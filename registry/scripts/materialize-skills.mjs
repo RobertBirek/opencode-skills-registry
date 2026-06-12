@@ -3,6 +3,13 @@ import { createHash } from 'node:crypto';
 import { promises as fs } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
+import os from 'node:os';
+
+function resolvePath(p) {
+  if (!p) return p;
+  if (p.startsWith('~')) return path.join(os.homedir(), p.slice(1));
+  return p;
+}
 
 function parseArgs(argv) {
   const args = { project: process.cwd(), registry: '', manifest: '' };
@@ -134,7 +141,7 @@ async function main() {
 
     if (entry.materialize === false || entry.sourceType !== 'local') continue;
 
-    const sourceDir = path.join(entry.sourceRoot, entry.path);
+    const sourceDir = path.join(resolvePath(entry.sourceRoot), entry.path);
     const targetDir = path.join(projectSkillsDir, skillName);
 
     if (!(await exists(sourceDir))) continue;
